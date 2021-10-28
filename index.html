@@ -87,10 +87,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>本笔记纯粹个人读书习惯与相应见解，内容归纳完全出于个人需要与个人局限，如有修改意见，欢迎斧正，QQ:2570101165</p>
+<p>本笔记纯粹个人读书习惯与相应见解，内容归纳完全出于个人需要与个人局限，如有修改意见（比如哪儿应该是值得加粗的重点），欢迎斧正，QQ:2570101165 电话：13393583728</p>
 </blockquote>
 <h1 id="一、-Introduction"><a href="#一、-Introduction" class="headerlink" title="一、    Introduction"></a>一、    Introduction</h1><h2 id="1-1-Cryptography-and-Modern-Cryptography"><a href="#1-1-Cryptography-and-Modern-Cryptography" class="headerlink" title="1.1     Cryptography and Modern Cryptography"></a>1.1     Cryptography and Modern Cryptography</h2><p>经典密码学：编写或解决代码的<strong>艺术</strong></p>
-<p>现代密码学：保护数字信息、系统和分布式计算免受对抗式攻击的数学技术的研究（不完整） 例如：确保完整性的机制、交换密钥的技术、验证用户的协议、电子拍卖和选举、数字现金等等</p>
+<p>现代密码学：保护数字信息、系统和分布式计算免受对抗式攻击的数学技术的研究（不完整定义） 例如：确保完整性的机制、交换密钥的技术、验证用户的协议、电子拍卖和选举、数字现金等等</p>
 <p>分水岭：20世纪七八十年代，一种丰富的理论开始出现，使密码学作为一门科学和数学学科的严格研究成为可能</p>
 <p>进步：密码学已经从一套用于确保军队秘密通信的启发式工具，发展成为一门帮助全球普通民众保护系统安全的科学。这也意味着密码学已经成为计算机科学中一个更核心的话题</p>
 <h2 id="1-2-The-Setting-of-Private-Key-Encryption"><a href="#1-2-The-Setting-of-Private-Key-Encryption" class="headerlink" title="1.2    The Setting of Private-Key Encryption"></a>1.2    The Setting of Private-Key Encryption</h2><blockquote>
@@ -162,7 +162,7 @@
 </li>
 </ol>
 </li>
-<li><p>密钥与Kerckhoffs’ principle（克霍夫斯原则）</p>
+<li><p>密钥与<strong>Kerckhoffs’ principle（克霍夫斯原则）</strong></p>
 <p>​        19世纪末，奥古斯特·克霍夫斯(Auguste  kerckhoff)在一篇论文中提出一些观点，阐述了军用密码的几个设计原则。其中最重要的一条，现在被简单地称为克霍夫斯原则，就是:密码方案不能要求保密，而且必须能够毫无不便地落入敌人手中。</p>
 <p>​        即，安全性不应该依赖于加密方案是秘密的，相反，克霍夫斯原则要求安全完全依赖于密钥的保密性！</p>
 <blockquote>
@@ -171,18 +171,18 @@
 <p>​        主要原因有三，如下：</p>
 <p>​        ①维护短密钥的保密性要比保密所使用的(更复杂的)算法容易得多。想象在某个组织中使用加密来保护所有员工对之间的通信，除非每一对当事人使用他们自己的、唯一的算法，否则一些员工就会知道其他人使用的算法。加密算法的信息就存在被泄露的可能性，比如员工被解雇后，或者被攻击者通过逆向工程获得。</p>
 <p>​        ②如果各方共享的秘密信息被泄露，更换密钥要比更换加密方案容易得多。（类似于更新文件和安装新程序的区别）此外，生成一个新的密钥是相对琐碎的，而设计一个新的加密方案将是一项巨大的任务。</p>
-<p>​        ③对于大规模部署，所有用户都使用相同的加密算法或软件（但是使用不同的密钥)要比所有用户使用自定义的算法容易得多。即使是与多个不同方通信的单个用户也是如此。加密方案的标准化是有好处的：1)默认情况下确保兼容性；2)用户使用的加密方案经过公众审查，（暂时）不会存在任何弱点</p>
+<p>​        ③对于大规模部署，所有用户都使用相同的加密算法或软件（但是使用不同的密钥)要比所有用户使用自定义的算法容易得多。即使是与多个不同方通信的单个用户也是如此。加密方案的标准化是有好处的：1) 默认情况下确保兼容性；2) 用户使用的加密方案经过公众审查，（暂时）不会存在任何弱点</p>
 </li>
 </ol>
 <h2 id="1-3-Historical-Ciphers-and-Their-Cryptanalysis"><a href="#1-3-Historical-Ciphers-and-Their-Cryptanalysis" class="headerlink" title="1.3    Historical Ciphers and Their Cryptanalysis"></a>1.3    Historical Ciphers and Their Cryptanalysis</h2><blockquote>
-<p>全书明文小写，密文大写</p>
+<p>全书明文小写，密文大写，不考虑标点数字空格等特殊字符</p>
 </blockquote>
 <h3 id="1-3-1-Caesar’s-cipher"><a href="#1-3-1-Caesar’s-cipher" class="headerlink" title="1.3.1    Caesar’s cipher"></a>1.3.1    Caesar’s cipher</h3><ol>
 <li><p>每个字母向前移 <strong>3</strong> 位，即a-&gt;D,b-&gt;E…y-&gt;b,z-&gt;c</p>
 </li>
 <li><p>直接问题是加密方法固定，没有密钥，知道如何加密的都能解密</p>
 </li>
-<li><p>ROT-13(移位为13位而不是3位)为该密码的一中变体，如今仍在各种在线论坛中使用。但并不提供任何加密安全性，只是用来确保信息(例如电影剧透)是不可理解的，除非信息的读者有意识地选择解密它。</p>
+<li><p>ROT-13(移位为13位而不是3位)为该密码的一中变体，如今仍在各种在线论坛中使用。但并<strong>不提供任何加密安全性</strong>，只是用来确保信息(例如电影剧透)是不可理解的，除非信息的读者有意识地选择解密它。</p>
 </li>
 </ol>
 <h3 id="1-3-2-The-shift-cipher-and-the-sufficient-key-space-principle"><a href="#1-3-2-The-shift-cipher-and-the-sufficient-key-space-principle" class="headerlink" title="1.3.2    The shift cipher and the sufficient key-space principle"></a>1.3.2    The shift cipher and the sufficient key-space principle</h3><ol>
@@ -193,6 +193,7 @@
 </ol>
 <p>$$<br>Enc_k(m_1…m_l)=C_1…C_l,\quad where\ \  c_i=[(m_i+k)\ mod\ 26]\Dec_k(c_1…c_l)=m_1…m_l,\quad where\ \  m_i=[(c_i-k)\ mod\ 26]<br>$$</p>
 <ol start="3">
+<li>缺点也很明显，试26次咋也能试出来。文本万一没意义怎么办？那也至少可以把可能性降到26</li>
 <li><strong>sufficient key-space principle</strong>:<br> <em>Any secure encryption scheme must have a key space that is sufficiently large to make an exhaustive-search attack infeasible.</em></li>
 </ol>
 <blockquote>
@@ -205,18 +206,237 @@
 <li>何为“infeasible（不可行）”？既取决于潜在攻击者的资源，也取决于发送者和接收者希望确保其通信保密的时间长度。如今，攻击者可以使用超级计算机、数万台个人计算机或图形处理单元(GPUs)来加速暴力攻击。因此，为了防止这种攻击，密钥空间必须非常大，比如至少2^70^。如果攻击者是个土豪，想要长期保持安全，密钥空间甚至需要更大。</li>
 </ol>
 <h3 id="1-3-3-The-mono-alphabetic-substitution-cipher"><a href="#1-3-3-The-mono-alphabetic-substitution-cipher" class="headerlink" title="1.3.3    The mono-alphabetic substitution cipher"></a>1.3.3    The mono-alphabetic substitution cipher</h3><ol>
-<li>在移位密码中，密钥定义了从(明文)字母表的每个字母到(密文)字母表中的某个字母的映射，其中映射是由密钥决定的固定移位。在单字母替换密码中，密钥还定义了一个字母映射，但现在允许映射是任意的，仅受一对一的约束，以便解密。</li>
-<li><img src="/2021/10/21/%E5%AF%86%E7%A0%81%E5%AD%A6%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B01/image-20211021173637625.png" alt="image-20211021173637625"></li>
+<li><p>在移位密码中，密钥定义了从(明文)字母表的每个字母到(密文)字母表中的某个字母的映射，其中映射是由密钥决定的固定移位。在单字母替换密码中，密钥还定义了一个字母映射，但现在允许映射是任意的，仅受一对一的约束，以便解密。示例如下：</p>
+<p><img src="/2021/10/21/%E5%AF%86%E7%A0%81%E5%AD%A6%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B01/image-20211021180654367.png" alt="image-20211021180654367"></p>
+</li>
+<li><p>单表代换密码包含所有的<em>bijections</em>或<em>permutations</em></p>
+<p>密钥空间大小为26!=26·25·24· · ·2·1≈2^88^,已经大到令暴力穷举攻击变为不可能。但这并不意味着已经安全了！</p>
+</li>
+<li><p>利用英语的统计模型发动的攻击（其他语言也适用）</p>
+<p>我们从下图可以看到，在语法正确的情况下， <strong>e</strong> 是出现最多的字母，通过统计密文中出现的字母频率，可以猜出大概的对应关系（中文中出现最频繁的汉字：<strong>的 一 是 了 我</strong>）</p>
+<p>缺点：①对与否全靠直觉（make sense） ②太短的密文可能不满足这个分布 ③自动化程度太低 等</p>
+<blockquote>
+<p>所以有人在早上喝咖啡的功夫就把它破解了</p>
+</blockquote>
+<p><img src="/2021/10/21/%E5%AF%86%E7%A0%81%E5%AD%A6%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B01/image-20211021173637625.png" alt="image-20211021173637625"></p>
+</li>
 </ol>
-<h2 id="1-4-Principles-of-Modern-Cryptography"><a href="#1-4-Principles-of-Modern-Cryptography" class="headerlink" title="1.4    Principles of Modern Cryptography"></a>1.4    Principles of Modern Cryptography</h2><h2 id="1-5-英语积累"><a href="#1-5-英语积累" class="headerlink" title="1.5    英语积累"></a>1.5    英语积累</h2><blockquote>
+<h3 id="1-3-4-An-improved-attack-on-the-shift-cipher"><a href="#1-3-4-An-improved-attack-on-the-shift-cipher" class="headerlink" title="1.3.4    An improved attack on the shift cipher"></a>1.3.4    An improved attack on the shift cipher</h3><p>主要基于以下两个公式<br>$$<br>\sum_{i=0}^{25}p_i^2\approx0.065\<br>I_j\overset{\text{def}}{=}\sum_{i=0}^{25}p_i·q_{i+j}<br>$$<br>从j=0开始算，哪个算下来最接近0.065哪个大概就是真正的密钥，自动化程度提高了</p>
+<h3 id="1-3-5-The-Vigenere-poly-alphabetic-shift-cipher"><a href="#1-3-5-The-Vigenere-poly-alphabetic-shift-cipher" class="headerlink" title="1.3.5    The Vigenère (poly-alphabetic shift) cipher"></a>1.3.5    The Vigenère (poly-alphabetic shift) cipher</h3><p>一张图看懂如何加密</p>
+<p><img src="/2021/10/21/%E5%AF%86%E7%A0%81%E5%AD%A6%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B01/image-20211021184516765.png" alt="image-20211021184516765"></p>
+<p>优点：令文本字母的出现频率趋于相等（smooth out），很难通过概率分析攻破，因此尽管它是在16世纪发明的，但对它的系统攻击直到几百年后才被设计出来。</p>
+<h3 id="1-3-6-Attacking-the-Vigenere-cipher"><a href="#1-3-6-Attacking-the-Vigenere-cipher" class="headerlink" title="1.3.6    Attacking the Vigenère cipher"></a>1.3.6    Attacking the Vigenère cipher</h3><ol>
+<li><p>假设我们知道密钥的长度（<em><strong>period</strong></em>）t。如果采用暴力穷举法，计算复杂度为26^t^。密钥长度稍微一长，就变的不再可行了。</p>
+<p>那么我们可以把密文分为t部分（stream）（具体怎么分大家应该都知道），然后把每部分当做一段独立的移位密码来处理。对每部分密文分别进行一次统计模型攻击，这时计算复杂度将降为26·t。</p>
+</li>
+<li><p>为了更容易实现自动化，我们可以把上一步中的移位密码用<strong>1.3.4</strong>里介绍的方法处理。这种攻击并不依赖于检查“有意义”的明文，而只依赖于明文中字符的潜在频率分布，更加的科学。</p>
+</li>
+<li><p>如果密钥长度未知呢？</p>
+<p>​    3.1 我们当然可以重复1和2中的步骤一个一个往出试，试T次就可以成功（T≥t）</p>
+<blockquote>
+<p>这种方法又蠢又低效，而且密钥长度但凡长点人就傻了</p>
+</blockquote>
+<p>​    3.2 更有效的方法：卡西斯基法（<em>Kasiski’s method</em> 19世纪中叶）</p>
+<p>​        第一步是识别密文中长度为2或3的重复模式，这些可能是在明文中经常出现的某些双字或三元字的结果，例如 <strong>the</strong> 等。因为当密文足够长时，重复出现的词组可能是同一个单词被<strong>密钥的同一个部分</strong>加密的结果</p>
+<img src="/2021/10/21/%E5%AF%86%E7%A0%81%E5%AD%A6%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B01/489EBB99.jpg" alt="489EBB99" style="zoom:25%;">
+
+<p>​        而它们之间的间隔就是密钥长度的倍数，如下图所示：</p>
+<p><img src="/2021/10/21/%E5%AF%86%E7%A0%81%E5%AD%A6%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B01/DCD1D4A1C74BA0CD2FF8B6192FD4FEE4.png" alt="DCD1D4A1C74BA0CD2FF8B6192FD4FEE4"></p>
+<p>​          两次重复出现的<strong>LII</strong>之间的间隔为30，所以我们有理由相信密钥的长度可能为1,2,3,5,6,10,15,30中的一个</p>
+<blockquote>
+<p>但这种方法更像是“人”做的，充满了不确定性</p>
+</blockquote>
+<p>​    3.3 更更有效的方法：巧合指数法（<em>index of coincidence method</em>）</p>
+<p>​        每个stream都是独立的移位密码，意味着在这个序列中，字符的频率应该与标准英语文本中的字符频率相同，仅仅是对应字母的叫法变了。设标准英文字母出现的频率为$$p$$，这个序列中对应字母的频率为$$q$$。则根据<strong>1.4.3</strong>第一个公式易推导出如下公式：<br>$$<br>\sum_{i=0}^{25}q_i^2\approx\sum_{i=0}^{25}p_i^2\approx0.065\<br>$$<br>​        对于<strong>步长</strong>为 $$\tau=1,2,…$$的密文序列$$c_1,c_{1+\tau},c_{1+2\tau}$$，计算对应的$$S_{\tau}$$:<br>$$<br>S_\tau\overset{\text{def}}{=}\sum_{i=0}^{25}q_{i}^2<br>$$<br>​        当$$\tau=t$$时，我们期望$$S_{\tau}\approx0.065$$。另一方面，由于我们认为密文的字母经过“平滑处理”，所以出现频率几乎相同，即$$q_{i}\approx1/26$$，所以当$$\tau$$不是$$t$$的倍数时，我们希望得到<br>$$<br>S_\tau\approx\sum_{i=0}^{25}(\frac{1}{26})^2\approx0.038<br>$$</p>
+<blockquote>
+<p>计算复杂度不高，不靠“直觉”，计算结果可信度大，真实结果与错误结果区别易于区分，可自动化程度高 ，但仍然有它的缺点</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="1-3-7-Ciphertext-length-and-cryptanalytic-attacks"><a href="#1-3-7-Ciphertext-length-and-cryptanalytic-attacks" class="headerlink" title="1.3.7    Ciphertext length and cryptanalytic attacks"></a>1.3.7    Ciphertext length and cryptanalytic attacks</h3><p>一般来说，较长的密钥需要密码分析人员获得更多的密文才能进行攻击。就像上面的维吉尼亚密码要破解需要比普通移位密码多t倍的密文。</p>
+<blockquote>
+<p>当密钥与明文一样长时,维吉尼亚密码就是安全的（一次一密）第2章有类似案例</p>
+</blockquote>
+<blockquote>
+<p>包括以上提到的密码，历史上所有出现过的古典密码都被攻破了</p>
+</blockquote>
+<h2 id="1-4-Principles-of-Modern-Cryptography"><a href="#1-4-Principles-of-Modern-Cryptography" class="headerlink" title="1.4    Principles of Modern Cryptography"></a>1.4    Principles of Modern Cryptography</h2><p>历史上的密码方案总是在“攻击”与”修补“中反复横跳，就算已经用一个非常强的证据证明该方案不安全，但是人们还是离不开这个横跳，因为对于“安全”方案应该满足哪些需求并没有达成一致的概念，也没有办法证明任何特定的方案是安全的。这也是为什么密码学在历史上更像一门艺术而不是科学。</p>
+<p>在过去的几十年里，密码学已经发展成为一门科学。现在，人们以更系统的方式开发和分析方案，最终目的是对给定的结构是否安全进行严格的<strong>证明</strong>。为了阐明这种证明，我们首先需要<strong>形式化的定义</strong>来明确“安全”的确切含义;这些定义本身就很有用，也很有趣。事实证明，大多数密码学的证明都依赖于目前尚未证实的关于某些数学问题的算法难度的<strong>假设</strong>;任何这样的假设都必须明确和准确地表述出来。对 <em><strong>定义、假设和证明</strong></em>  的强调将现代密码学与古典密码学区分开来</p>
+<h3 id="1-4-1-Principle-1-–-Formal-Definitions"><a href="#1-4-1-Principle-1-–-Formal-Definitions" class="headerlink" title="1.4.1    Principle 1 – Formal Definitions"></a>1.4.1    Principle 1 – Formal Definitions</h3><blockquote>
+<p>这块有点冗杂，我自己分了大概几个点，点与点之间部分互通</p>
+</blockquote>
+<blockquote>
+<p>formal可以翻译成形式化、规范化、正式化，知道他想表达啥意思就行</p>
+</blockquote>
+<h4 id="1-4-1-1-形式化定义的重要性"><a href="#1-4-1-1-形式化定义的重要性" class="headerlink" title="1.4.1.1    形式化定义的重要性"></a>1.4.1.1    形式化定义的重要性</h4><p>现代密码学的主要贡献之一是认识到安全的形式化定义对于正确的设计、研究、评估和使用密码原语至关重要。</p>
+<blockquote>
+<p>如果你不知道自己想要实现什么目标，你怎么可能知道自己何时(或是否)实现了目标?</p>
+</blockquote>
+<p>形式化定义给出了在一定范围内清晰的威胁描述，与希望达到的安全保证。正因为如此，该定义可以帮助指导设计密码学方案。事实上，相比起在设计完成后才提出一个相关定义，在设计工作开始前就规范化地表达希望方案达到什么效果会更好。前者在当设计者筋疲力尽时（而不是在设计结束之后）会有暂停的风险，或者<strong>可能会导致在牺牲了效率的情况下，方案达到超过所需的程度</strong>，从而造成资源浪费。</p>
+<h4 id="1-4-1-2-形式化定义的作用"><a href="#1-4-1-2-形式化定义的作用" class="headerlink" title="1.4.1.2    形式化定义的作用"></a>1.4.1.2    形式化定义的作用</h4><p>定义还提供了一种评估和分析所构建内容的方法。当给出恰当的定义后，我们可以通过研究是否达到预期的安全保证来判断一个待分析的方案；在某些情况下，我们甚至可以通过展示某个方案<strong>满足了定义</strong>从而证明这个结构是安全的（见1.4.3）。另一方面，一个方案也可以通过证明其不满足安全定义从而证明它是不安全的。注意！不能说存在理论上的攻击方法就可以证明这个密码学方案是不安全的。比如，对维吉尼亚密码的攻击需要假设有足够长的密文。而且当文本是足够短或者被<strong>压缩</strong>（这时文本的字母频率被平滑处理了）的情况下，我们这时就不能说维吉尼亚密码是不安全的。也就是说，<strong>在没有合适的定义的情况下，我们很难说一个密码学方案是不是安全的</strong>。</p>
+<p>定义允许方案之间进行有意义的比较。我们有很多种有效的方法来定义安全性，而具体选择哪种方法取决于所使用方案的上下文。<strong>一个满足弱定义的方案可能比一个满足强定义的方案更有效率</strong>，通过更精确的定义我们可以在两个方案之间更正确的权衡评估。同样地，定义保证了方案的安全使用。思考一下对一些更大的应用如何决定使用哪个密码学方案。一个靠谱的方法就是首先去理解这个应用需要的安全性概念，然后去找满足这个概念的密码学系统。这个方法附带的好处就是<strong>模块化</strong>：设计者可以把一个密码学方法替换为另外一个而不用担心影响整体应用的安全性。</p>
+<blockquote>
+<p>我猜这也是一篇paper可以解决某一方面的问题的根本所在</p>
+</blockquote>
+<p>研究一个正式的定义迫使人们思考什么是问题的本质以及什么性质是无关的。通过这个过程常常可以发现一些乍一看并不明显的问题细微の之处(这也是开组会的好处)</p>
+<h4 id="1-4-1-3-形式化定义的组成"><a href="#1-4-1-3-形式化定义的组成" class="headerlink" title="1.4.1.3    形式化定义的组成"></a>1.4.1.3    形式化定义的组成</h4><p>虽然我们每个人对安全都有自己直观的定义，但无数事件告诉我们这种直觉往往是错误的至少是有缺点的。通常，安全定义有两个组件:<strong>安全保证（security guarantee）</strong>(从攻击者的角度来看，是什么构成了对方案成功攻击的因素，即方案的<strong>脆弱点</strong>)和<strong>威胁模型（threat model）</strong>。安全保证定义了计划要阻止攻击者做什么，而威胁模型则描述了对手的能力，即假定攻击者能够执行什么操作。</p>
+<blockquote>
+<p>好多paper也是这个逻辑顺序</p>
+</blockquote>
+<blockquote>
+<p>安全的形式化定义在后两章会更详细介绍</p>
+</blockquote>
+<h5 id="一-安全保证的心路历程"><a href="#一-安全保证的心路历程" class="headerlink" title="一.    安全保证的心路历程"></a>一.    安全保证的心路历程</h5><blockquote>
+<p>这块开始注释将爆炸增长</p>
+</blockquote>
+<ul>
+<li><p><em>It should be impossible for an attacker to recover the key.</em></p>
+<blockquote>
+<p>不能恢复密钥不足以保证安全。加密的目的是保护信息;密钥是实现这一目标的方法，但<strong>密钥本身并不重要</strong>！</p>
+</blockquote>
+</li>
+<li><p><em>It should be impossible for an attacker to recover the entire plaintext from the ciphertext.</em></p>
+<blockquote>
+<p>有些信息一点也不敢泄露，更何况这儿没定义泄露多少算“安全”</p>
+</blockquote>
+</li>
+<li><p><em>It should be impossible for an attacker to recover any character of theplaintext from the ciphertext.</em></p>
+<blockquote>
+<p>乍一看好像整挺好，但其实还不够，毕竟有些信息不需要明文叙述就能猜出来，比如A和B谁的工资更高</p>
+</blockquote>
+<blockquote>
+<p>另一个问题是如何将对手“恢复明文字符”的含义形式化。如果攻击者通过纯粹的运气或外部信息，例如正确地猜测某人工资的最低有效位数是0，该怎么办?显然，这不应该使加密方案变得不安全，因此任何可行的定义都必须以某种方式将这种行为从成功的攻击中排除</p>
+</blockquote>
+</li>
+<li><p><em>The “right” answer: regardless of any information an attacker already has, a ciphertext should leak no additional information about the underlying plaintext.</em></p>
+<blockquote>
+<p>它并没有试图定义关于明文的哪些信息是“有意义的”！它只要求不泄露任何信息。这很重要，因为这意味着一个安全的加密方案适用于所有需要保密的潜在应用程序。</p>
+</blockquote>
+<blockquote>
+<p>这里缺少的是<strong>定义</strong>（名词）的精确数学公式。我们应该如何掌握攻击者关于明文的先验知识?(没)泄露信息是什么意思?参见定义2.3和3.12</p>
+</blockquote>
+</li>
+</ul>
+<h5 id="二-威胁模型的成长路线"><a href="#二-威胁模型的成长路线" class="headerlink" title="二.    威胁模型的成长路线"></a>二.    威胁模型的成长路线</h5><blockquote>
+<p>我们详细说明我们对对手能力的假设，但我们不假设对手如何使用这些能力。我们不可能预知在攻击中他们会使用什么策略，妄图做这个的死得都很惨</p>
+</blockquote>
+<p>以下威胁模型按攻击者能力大小<strong>升序</strong>排列</p>
+<ul>
+<li><p><strong>Ciphertext-only attack</strong></p>
+<p>最基本的攻击，经典加密方案中隐含假设的威胁模型。</p>
+</li>
+<li><p><strong>Known-plaintext attack</strong></p>
+<p>我们所见过的所有经典加密方案都可以通过该攻击轻易破解</p>
+</li>
+<li><p><strong>Chosen-plaintext attack</strong></p>
+<p>上一条+<em>its choice</em></p>
+</li>
+<li><p><strong>Chosen-ciphertext attack</strong></p>
+<p>对手能够额外获得自己选择的密文的解密（<strong>或some information</strong>）。例如，攻击者选择的某些密文的解密是否会产生有效的英文消息</p>
+<blockquote>
+<p>以上这些攻击都是为了获得底层明文的信息，注意，不是明文本身</p>
+</blockquote>
+<p>这些威胁模型没有一个天生就比其他模型好，使用哪种模型取决于部署加密方案的环境。前两种攻击是最容易实施的。第一种搭个线就行了；第二种是因为明文/密文对总是容易泄露出来的，例如两个实体总是“hello”，或者有些信息保密期一过就自动公开了。</p>
+<blockquote>
+<p>3.4.2-&gt;选择明文攻击        3.7-&gt;选择密文攻击</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="1-4-2-Principle-2-–-Precise-Assumptions"><a href="#1-4-2-Principle-2-–-Precise-Assumptions" class="headerlink" title="1.4.2    Principle 2 – Precise Assumptions"></a>1.4.2    Principle 2 – Precise Assumptions</h3><p>大多数现代密码结构不能被证明是无条件安全的，这样的证明需要解决计算复杂性理论中的一些问题，而这些问题在今天看来似乎还远远没有答案。这将导致安全性的证明通常<strong>依赖于假设</strong>！现代密码学要求任何这样的假设都要明确和数学层面上的精确（<em>explicit and mathematically precise</em>）。<a href="#1">在最基本的层次上，这仅仅是因为安全性的数学证明需要这样做</a></p>
+<h4 id="一、-我们需要“假设”的其它原因："><a href="#一、-我们需要“假设”的其它原因：" class="headerlink" title="一、    我们需要“假设”的其它原因："></a>一、    我们需要“假设”的其它原因：</h4><ul>
+<li><p><em><strong>Validation of assumptions</strong></em>：</p>
+<blockquote>
+<p>比起“验证”，我更倾向于翻译为“有效性”</p>
+</blockquote>
+<ol>
+<li>就其本质而言，假设是没有被证明的陈述，而是被<strong>推测</strong>为正确的</li>
+<li>假设越被检验和测试而不被反驳，我们就越相信这个假设是正确的</li>
+<li>研究假设可以通过证明它由其他一些 <em>也被广泛相信的</em> 假设所隐含，从而证明其有效性（爱屋及乌，感觉可能引起连环爆炸）</li>
+<li>如果所依赖的假设没有被精确地陈述，<a href="#2">它就不能被研究和((<em>potentially</em>)反驳</a>。因此，对所假定内容有一个精确的陈述，也有助于增加我们对假设成立的信心</li>
+</ol>
+</li>
+<li><p><em><strong>Comparison of schemes</strong></em>：</p>
+<p>假如有两个方案A和B，它们都可以被证明满足某些<strong>定义</strong>，但每个方案都基于不同的<strong>假设</strong>。如果<strong>A</strong>方案所基于的假设<strong>比B</strong>方案所基于的假设更<strong>弱</strong>(即，B假设隐含着A假设（$$B\ \owns A$$）)，那么<strong>A</strong>方案是<strong>更好</strong>的。因为A错说明B一定错，但B错A不一定错</p>
+<blockquote>
+<p>我感觉这儿“假设”可以理解为”不确定性因素“，“假设”越弱，“不确定性”就越低，最后结果正确的”可能性“就越高。</p>
+</blockquote>
+</li>
+<li><p><em><strong>Understanding the necessary assumptions</strong></em>：</p>
+<p>加密方案可能基于某些底层构建块（和前面模块化呼应了）。如果后来在构建块中发现了一些弱点，我们如何判断整个加密方案是否仍然安全?</p>
+<p>如果我们明确   关于某个构建块的基本假设   已经作为了证明方案安全性的一部分，那么我们只需要检查所需要的假设是否受到所发现的新弱点的影响。</p>
+<blockquote>
+<p>上段原文：If the underlying assumptions regarding the building block are made <strong><a href="#3">clear</a></strong> as part of proving security of the scheme,then we need only check whether the required assumptions are affected by the new weaknesses that were found.</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="二、-一个有趣的问题"><a href="#二、-一个有趣的问题" class="headerlink" title="二、    一个有趣的问题"></a>二、    一个有趣的问题</h4><p>与其根据其它的假设来证明一个方案是安全的，为什么不简单地假设方案的构造本身是安全的呢?就像一个方案用了很多年没出问题，我们为什么不直接令 $$该方案:=安全$$？</p>
+<ul>
+<li><p>一个经过多年检验的假设比一个<strong>随着新结构引入</strong>的、新的、临时的假设更可取。</p>
+<blockquote>
+<p>这儿“新结构”应该才是重点，而不是后面的“假设”</p>
+<p>我理解的意思为：久经磨炼的方案本身都不一定能比过一个新的假设，更不用说一个久经磨炼的假设和一个新方案的比较了</p>
+</blockquote>
+</li>
+<li><p>人们普遍倾向于更容易描述的假设，因为这样的假设更容易研究和(可能)反驳。例如，假设某个数学问题很难解决，要比假设加密方案满足复杂的安全定义更容易研究和评估。</p>
+<p>依赖“低级”假设而不是仅仅假设构造是安全的另一个优势是，这些“低级”假设通常可以用于其他构造。</p>
+<blockquote>
+<p>这儿的”低级“（low-level）应该指的是更根本，更本质，更基础</p>
+</blockquote>
+<blockquote>
+<p>公理和定理的区别</p>
+</blockquote>
+</li>
+<li><p>“低级”假设可以提供模块化</p>
+<blockquote>
+<p>又和前面呼应了，而且和上面第二点含义相通</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="1-4-3-Principle-3-–-Proofs-of-Security"><a href="#1-4-3-Principle-3-–-Proofs-of-Security" class="headerlink" title="1.4.3    Principle 3 – Proofs of Security"></a>1.4.3    Principle 3 – Proofs of Security</h3><p>以上描述的两个原则允许我们实现提供严格证明的目标，即<strong>证明一个结构在某些特定假设下满足给定的定义</strong>。在密码学的环境中，当攻击者积极地试图“破坏”某些方案时，这种证明显得尤其重要。与定义和假设相关联的安全性证明给出了非常强力的保证——保证没有攻击者可以成功，这比采用无原则或启发式的方法来解决问题要好得多。</p>
+<p>如果不能证明任何拥有特定资源的对手都不能破坏某个方案，那么<a href="#4">我们就只能凭直觉认为是这样</a>。经验表明，在密码学和计算机安全方面，直觉是灾难性的。有无数未经证实的计划被破坏的例子，有时是立即，有时是在开发后数年</p>
+<blockquote>
+<p>Proofs of security give an iron-clad guarantee—relative to the<br>definition and assumptions—that no attacker will succeed</p>
+<p>这儿的”relative to“，我认为应该理解成”关联“而不是”相对于“</p>
+</blockquote>
+<blockquote>
+<p>定义、假设和证明构成了现代密码学的严格方法，与早期非正式的古典密码学有着根本区别</p>
+</blockquote>
+<h3 id="1-4-4-Provable-Security-and-Real-World-Security"><a href="#1-4-4-Provable-Security-and-Real-World-Security" class="headerlink" title="1.4.4    Provable Security and Real-World Security"></a>1.4.4    Provable Security and Real-World Security</h3><h4 id="1-4-4-1-现代密码学仍是艺术，"><a href="#1-4-4-1-现代密码学仍是艺术，" class="headerlink" title="1.4.4.1    现代密码学仍是艺术，"></a>1.4.4.1    现代密码学仍是艺术，</h4><p>更多体现在了</p>
+<ul>
+<li>开发适合现代应用于环境的定义；</li>
+<li>提出新的数学层面的假设或设计新的原语；</li>
+<li>构建新的方案并证明其安全</li>
+</ul>
+<h4 id="1-4-4-2-安全性证明不是神"><a href="#1-4-4-2-安全性证明不是神" class="headerlink" title="1.4.4.2    安全性证明不是神"></a>1.4.4.2    安全性证明不是神</h4><p>现代密码学所采用的方法彻底改变了这个领域，并有助于提高现实世界中部署密码方案的安全性。但重要的是，不要夸大安全证明的含义。<strong>安全性证明总是与所考虑的定义和所使用的假设相关</strong>。</p>
+<ul>
+<li>如果安全保证与需要的不匹配，或者威胁模型没有捕捉到对手的真实能力，那么证明可能就无关紧要了。</li>
+<li>如果所依赖的假设被证明是错误的，那么安全性证明就毫无意义。</li>
+</ul>
+<h4 id="1-4-4-3-理论与现实的区别与联系"><a href="#1-4-4-3-理论与现实的区别与联系" class="headerlink" title="1.4.4.3    理论与现实的区别与联系"></a>1.4.4.3    理论与现实的区别与联系</h4><p>一个方案的安全性可以证明并不一定意味着该方案在现实世界中也是安全的。虽然有些人认为这是可证明安全性的缺点，但我们乐观地认为这说明了这种方法的优点。以下解释为什么：</p>
+<p>要在现实世界中攻击一个可证明安全的方案，只需将注意力集中在</p>
+<ul>
+<li><strong>定义(即，探索理想化的定义与部署方案的现实环境有何不同)</strong></li>
+<li><strong>基本假设(即，看看它们是否成立)</strong></li>
+</ul>
+<p>而密码学家的工作则是不断完善他们的定义，以更接近真实世界，并调查他们的假设，以测试其有效性。可证明的安全性并不能结束攻击者和防御者之间由来已久的斗争，但它确实提供了一个框架，有助于将胜局转向有利于防御者的方向。</p>
+<blockquote>
+<p>我们不考虑密码学实际实现的程度怎么样，某种程度上这不是我们应该考虑的问题</p>
+</blockquote>
+<h2 id="1-5-英语积累"><a href="#1-5-英语积累" class="headerlink" title="1.5    英语积累"></a>1.5    英语积累</h2><blockquote>
 <p>该部分出现的词语主要包括四部分：1.确实没见过的新词  2.见过太多以后应该会经常用的  3.以前见过但未曾设想的用法  4.有意思的</p>
 <p>p.s.:单词积累有限，望共同进步</p>
 </blockquote>
-<figure class="highlight plaintext"><figcaption><span>+ Chinese</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">rigorous 严厉的，严格的，严谨的</span><br><span class="line">heuristic 启发式的</span><br><span class="line">party 通信双方</span><br><span class="line">scenario 特定情节，剧本，方案</span><br><span class="line">canonical 按照教规的；权威的；公认的</span><br><span class="line">trivial 不重要的，微不足道的</span><br><span class="line">yield 生产，生长</span><br><span class="line">adversary 敌人；对手</span><br><span class="line">elucidate 阐述，说明</span><br><span class="line">stated differently 换句话说</span><br><span class="line">versus 与...相对</span><br><span class="line">whereas 然而，反之，但是</span><br><span class="line">scrutiny 仔细审查</span><br><span class="line">compatibility 兼容性</span><br><span class="line">obscurity 阴暗，晦涩，不解</span><br><span class="line">demonstrate 论证，说明</span><br><span class="line">i.e. 即</span><br><span class="line">Julius Caesar 凯撒大帝</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><figcaption><span>+ Chinese</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">rigorous 严厉的，严格的，严谨的</span><br><span class="line">heuristic 启发式的</span><br><span class="line">party 通信双方</span><br><span class="line">scenario 特定情节，剧本，方案</span><br><span class="line">canonical 按照教规的；权威的；公认的</span><br><span class="line">trivial 不重要的，微不足道的</span><br><span class="line">yield 生产，生长</span><br><span class="line">adversary 敌人；对手</span><br><span class="line">elucidate 阐述，说明</span><br><span class="line">stated differently 换句话说</span><br><span class="line">versus 与...相对</span><br><span class="line">scrutiny 仔细审查</span><br><span class="line">compatibility 兼容性</span><br><span class="line">obscurity 阴暗，晦涩，不解</span><br><span class="line">demonstrate 论证，说明</span><br><span class="line">i.e. 即</span><br><span class="line">Julius Caesar 凯撒大帝</span><br><span class="line">ad hoc 特别的；临时的；专设</span><br><span class="line">examine 仔细审查</span><br><span class="line">movie spoiler 电影剧透</span><br><span class="line">sufficient 充足的</span><br><span class="line">punctuation 标点</span><br><span class="line">numerical 数学符号</span><br><span class="line">mono- 单</span><br><span class="line">poly- 多</span><br><span class="line">tabulate 制表</span><br><span class="line">whereas 然而，反之，但是，鉴于</span><br><span class="line">cumbersome 讨厌的，麻烦的，笨重的</span><br><span class="line">thwart(-ed) 挫败，阻碍</span><br><span class="line">crack 裂缝，（使）爆裂 Challenge/Response Authentication of Cryptographic Key</span><br><span class="line">namely 也就是</span><br><span class="line">obstacle 障碍</span><br><span class="line">cf. abbr. （拉丁）比较【拉丁文confer(=compare)】</span><br><span class="line">illustrate 表明，阐明，举例</span><br><span class="line">perceive 感觉，感知</span><br><span class="line">As it turns out 事实证明</span><br><span class="line">post facto （拉丁语）事后的，溯及以往的</span><br><span class="line">on the flip side 相反，另一方面</span><br><span class="line">insofar 在这个范围，到这个程度</span><br><span class="line">subtlety 精妙，敏锐，精明</span><br><span class="line">blatantly 公然地；喧闹地；显然地</span><br><span class="line">justifiably 言之有理地，无可非议地</span><br><span class="line">plausible 可靠的，貌似有理的，似是而非的</span><br><span class="line">imply 暗示，隐含</span><br><span class="line">deduce 推论</span><br><span class="line">inherently 天性地，固执地</span><br><span class="line">by their very nature 就其本质而言</span><br><span class="line">conjecture 推测，猜想</span><br><span class="line">refute 反驳，驳倒</span><br><span class="line">downright （坏事或令人不快只是）彻头彻尾的；完全地，彻底地</span><br><span class="line">instantiate 实例化，举例说明</span><br><span class="line">off-the-cuff 为准备的；即席的（cuff 袖口，护腕，手铐）</span><br><span class="line">take-away point 外卖点，要点</span><br><span class="line">refine 精炼</span><br><span class="line">odds 可能性，机会，困难</span><br><span class="line">per se 自身，本身</span><br></pre></td></tr></table></figure>
 
 
 
-<h2 id="1-6-可能还没搞懂的点"><a href="#1-6-可能还没搞懂的点" class="headerlink" title="1.6    可能还没搞懂的点"></a>1.6    可能还没搞懂的点</h2>
+<h2 id="1-6-可能还没搞懂的点"><a href="#1-6-可能还没搞懂的点" class="headerlink" title="1.6    可能还没搞懂的点"></a>1.6    可能还没搞懂的点</h2><ol>
+<li><span id="1"> 这句话意思是数学证明需要假设还是需要精确? </span></li>
+<li><span id="2">不能被研究所以不存在反驳的可能性？还是，已经默认（(potentially）被反驳了？</span></li>
+<li><span id="3">这个clear就很迷，前面提出的问句已经说明了构建块出了问题，这儿再明确一下？</span></li>
+<li><span id="4">没太理解他想表达什么</span></li>
+</ol>
+
       
     </div>
     <footer class="article-footer">
